@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>formulario</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600&family=Cinzel:wght@600&family=Fjalla+One&family=Raleway:wght@200&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Bitter';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    input {
+      width: 300px;
+      padding: 14px;
+      margin-top: 16px;
+    }
+
+    button {
+      width: 330px;
+      padding: 14px;
+      margin-top: 16px;
+      background-color: #ff3f34;
+      font-family: 'bitter';
+      color: antiquewhite;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 400px;
+      height: 500px;
+      background-color: #444;
+
+    }
+
+    label {
+      color: aliceblue;
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    input::placeholder {
+      color: #777;
+    }
+
+    input::placeholder::hover {
+      margin-top: 0px;
+    }
+
+    .erro {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <form id="form" action="">
+    <label for="action" id="nome">Entrar</label>
+    <input id="email" type="text" placeholder="E-mail ou número de telefone">
+    <input id="senha" type="text" placeholder="Senha">
+    <button id="btn">Entrar</button>
+
+  </form>
+  <script>
+    const form = document.querySelector('#form')
+    const btn = document.getElementById('btn')
+
+    function validar(e) {
+      e.preventDefault()
+      const email = document.getElementById('email')
+      const senha = document.getElementById('senha')
+
+      if (email.value.length < 10) {
+        alert('Minimo de 10 caracters')
+
+      }
+
+      if (senha.value.length < 10) {
+        alert('senha fraca minimo 10 caracters')
+      }
+
+    }
+    btn.addEventListener('click', validar)
+
+  </script>
+</body>
+
+</html>
